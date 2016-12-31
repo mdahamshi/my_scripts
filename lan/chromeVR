@@ -1,0 +1,18 @@
+#!/bin/bash
+/data/archbkp/raise/chromeVR
+if [ $? -eq 0 ]
+then
+exit 0
+fi
+
+terwin=$(xdotool getactivewindow)
+google-chrome --user-data-dir=/data/google-chrome/ --profile-directory="Profile 1" & > /dev/null 2>&1
+x=$(xdotool getactivewindow)
+
+while [ $x -eq $terwin ] 
+do
+sleep 0.5
+x=$(xdotool getactivewindow)
+done
+xprop -id `xdotool getactivewindow` | grep '_NET_WM_PID' | grep -oE '[[:digit:]]*$' > /data/archbkp/pids/chromeVR
+echo $x > /data/archbkp/appsID/chromeVR

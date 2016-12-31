@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Terminal=false
+Type=Application
+Name=Word
+Exec=/opt/google/chrome/google-chrome --profile-directory=Default --app-id=ddodaakghenhbbhejdaimeadbeicfcld --kiosk
+Icon=chrome-ddodaakghenhbbhejdaimeadbeicfcld-Default
+StartupWMClass=crx_ddodaakghenhbbhejdaimeadbeicfcld

@@ -1,0 +1,5 @@
+
+
+#!/bin/bash
+wmctrl -i -R $(cat /data/archbkp/appsID/calendar)
+

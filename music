@@ -1,0 +1,3 @@
+!#/bin/bash
+deadbeef /data/Music/Music/*
+exit 0

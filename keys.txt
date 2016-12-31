@@ -1,0 +1,7 @@
+google-chrome-stable   
+gnome-terminal
+evince
+nautilus
+gnome-system-monitor
+
+nautilus ~/.local/share/applications/

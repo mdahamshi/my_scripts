@@ -1,0 +1,2 @@
+#!/bin/bash
+echo "/data/archbkp/reshom.sh" | at 16:00 -M

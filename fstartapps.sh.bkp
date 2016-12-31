@@ -1,0 +1,134 @@
+
+#!/bin/bash
+
+sleep 2
+terwin=$(xdotool getactivewindow)
+firefox -P app -new-window web.whatsapp.com & > /dev/null 2>&1
+echo "launching whatsapp"
+x=$(xdotool getactivewindow)
+while [ $x -eq $terwin ] 
+do
+sleep 0.5
+x=$(xdotool getactivewindow)
+done
+echo $x > /data/archbkp/appsID/whatsapp
+xprop -id `xdotool getactivewindow` | grep '_NET_WM_PID' | grep -oE '[[:digit:]]*$' > /data/archbkp/pids/appspid
+
+
+/data/archbkp/min.sh
+sleep 0.1
+
+firefox -P app -new-window "http://inbox.google.com/" & > /dev/null 2>&1
+echo "launching inbox"
+x=$(xdotool getactivewindow)
+while [ $x -eq $terwin ] 
+do
+sleep 0.5
+x=$(xdotool getactivewindow)
+done
+echo $x > /data/archbkp/appsID/inbox
+/data/archbkp/min.sh
+sleep 0.1
+
+firefox -P appVR -new-window "http://inbox.google.com/" & > /dev/null 2>&1
+echo "launching inboxVR"
+x=$(xdotool getactivewindow)
+while [ $x -eq $terwin ] 
+do
+sleep 0.5
+x=$(xdotool getactivewindow)
+done
+echo $x > /data/archbkp/appsID/inboxVR
+/data/archbkp/min.sh
+sleep 0.1
+
+firefox -P app -new-window "http://keep.google.com/" & > /dev/null 2>&1
+echo "launching keep"
+x=$(xdotool getactivewindow)
+while [ $x -eq $terwin ] 
+do
+sleep 0.5
+x=$(xdotool getactivewindow)
+done
+echo $x > /data/archbkp/appsID/keep
+/data/archbkp/min.sh
+sleep 0.1
+
+firefox -P app -new-window "calendar.google.com/calendar/gp#~calendar:view=m" & > /dev/null 2>&1
+echo "launching calendar"
+x=$(xdotool getactivewindow)
+while [ $x -eq $terwin ] 
+do
+sleep 0.5
+x=$(xdotool getactivewindow)
+done
+echo $x > /data/archbkp/appsID/calendar
+/data/archbkp/min.sh
+sleep 0.1
+
+
+firefox -P app -new-window "translate.google.com/m/translate" & > /dev/null 2>&1
+echo "launching translate"
+x=$(xdotool getactivewindow)
+while [ $x -eq $terwin ] 
+do
+sleep 0.5
+x=$(xdotool getactivewindow)
+done
+echo $x > /data/archbkp/appsID/translate
+/data/archbkp/min.sh
+sleep 0.1
+
+firefox -P app -new-window "www.messenger.com" & > /dev/null 2>&1
+echo "launching messenger"
+x=$(xdotool getactivewindow)
+while [ $x -eq $terwin ] 
+do
+sleep 0.5
+x=$(xdotool getactivewindow)
+done
+echo $x > /data/archbkp/appsID/messenger
+/data/archbkp/min.sh
+sleep 0.1
+
+firefox -P appVR -new-window "www.messenger.com" & > /dev/null 2>&1
+echo "launching messenger VR"
+x=$(xdotool getactivewindow)
+while [ $x -eq $terwin ] 
+do
+sleep 0.5
+x=$(xdotool getactivewindow)
+done
+echo $x > /data/archbkp/appsID/messengerVR
+
+xprop -id `xdotool getactivewindow` | grep '_NET_WM_PID' | grep -oE '[[:digit:]]*$' > /data/archbkp/pids/appspidVR
+/data/archbkp/min.sh
+sleep 0.1
+
+firefox -P app -new-window "www.pushbullet.com/" & > /dev/null 2>&1
+echo "launching pushbullet"
+x=$(xdotool getactivewindow)
+while [ $x -eq $terwin ] 
+do
+sleep 0.5
+x=$(xdotool getactivewindow)
+done
+echo $x > /data/archbkp/appsID/pushbullet
+/data/archbkp/min.sh
+sleep 0.1
+
+gnome-calculator & > /dev/null 2>&1
+echo "launching calculator"
+x=$(xdotool getactivewindow)
+while [ $x -eq $terwin ] 
+do
+sleep 0.5
+x=$(xdotool getactivewindow)
+done
+echo $x > /data/archbkp/appsID/calc
+
+xprop -id `xdotool getactivewindow` | grep '_NET_WM_PID' | grep -oE '[[:digit:]]*$' > /data/archbkp/pids/calcPid
+/data/archbkp/min.sh
+
+echo "done !"
+

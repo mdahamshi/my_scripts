@@ -1,0 +1,2 @@
+#!/bin/bash
+/data/archbkp/eye.sh &> /dev/null

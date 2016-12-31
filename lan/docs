@@ -1,0 +1,17 @@
+#!/bin/bash
+/data/archbkp/raise/docs
+if [ $? -eq 0 ]
+then
+exit 0
+fi
+
+terwin=$(xdotool getactivewindow)
+google-chrome --user-data-dir=/data/google-chrome/ --profile-directory="Default" --app=https://docs.google.com/document/u/0/?showDriveBanner=true# & > /dev/null 2>&1
+x=$(xdotool getactivewindow)
+while [ $x -eq $terwin ] 
+do
+sleep 0.5
+x=$(xdotool getactivewindow)
+done
+xprop -id `xdotool getactivewindow` | grep '_NET_WM_PID' | grep -oE '[[:digit:]]*$' > /data/archbkp/pids/docs
+echo $x > /data/archbkp/appsID/docs

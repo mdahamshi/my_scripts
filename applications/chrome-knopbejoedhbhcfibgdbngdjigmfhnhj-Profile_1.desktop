@@ -1,0 +1,9 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.0
+Terminal=false
+Type=Application
+Name=mhnty_m_alqraan-_bas_bd_alnwr9834.pdf...
+Exec=/opt/google/chrome/google-chrome "--profile-directory=Profile 1" --app-id=knopbejoedhbhcfibgdbngdjigmfhnhj
+Icon=chrome-knopbejoedhbhcfibgdbngdjigmfhnhj-Profile_1
+StartupWMClass=crx_knopbejoedhbhcfibgdbngdjigmfhnhj

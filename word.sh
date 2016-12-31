@@ -1,0 +1,32 @@
+#!/bin/bash
+
+notify-send "aa" "
+Alpha        A 
+alpha        α 
+Beta         B 
+beta         β 
+Delta        Δ 
+delta        δ 
+partial      ∂ 
+Gamma        Γ 
+gamma        γ 
+epsilon      ϵ     
+Epsilon      Ε 
+varepsilon   ε 
+eta          η 
+Eta          H 
+theta        θ 
+Theta        Θ 
+kappa        κ 
+Kappa        K 
+lambda       λ 
+Lambda       Λ 
+pi           π 
+Pi           Π 
+omega        ω 
+Omega        Ω 
+mu           μ 
+Mu           M 
+infty        infinity symbol
+phi
+"

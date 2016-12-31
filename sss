@@ -1,0 +1,15 @@
+#!/bin/bash
+
+DEFAULT=0
+
+
+if [ -z "$1" ]
+then 
+	time="$DEFAULT"
+else
+	time="$1"
+	let time=(time*60)
+fi
+sleep $time
+sudo pm-suspend
+exit 0

@@ -1,0 +1,9 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.0
+Terminal=false
+Type=Application
+Name=one
+Exec=/opt/google/chrome/google-chrome --profile-directory=Default --app-id=fimijlbhmolhnhdlijlfflijjnpgghpk
+Icon=chrome-fimijlbhmolhnhdlijlfflijjnpgghpk-Default
+StartupWMClass=crx_fimijlbhmolhnhdlijlfflijjnpgghpk

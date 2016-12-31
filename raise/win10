@@ -1,0 +1,5 @@
+#!/bin/bash
+wmctrl  -R win10
+vboxmanage controlvm win10 resume
+sleep 0.1
+xdotool getactivewindow  > /data/archbkp/appsID/win10

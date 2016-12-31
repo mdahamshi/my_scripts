@@ -1,0 +1,13 @@
+#!/bin/bash
+terwin=$(xdotool getactivewindow)
+vboxmanage startvm winxp
+x=$(xdotool getactivewindow)
+while [ $x -eq $terwin ] 
+do
+sleep 0.5
+x=$(xdotool getactivewindow)
+done
+
+echo $x > /data/archbkp/appsID/xp
+
+

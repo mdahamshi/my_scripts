@@ -1,0 +1,20 @@
+#!/bin/bash
+shopt -s expand_aliases
+source /data/archbkp/p.sh
+STR2=$STR
+DEFAULT=0
+
+
+if [ -z "$1" ]
+then 
+        time="$DEFAULT"
+else
+        time="$1"
+        let time=(time*60)
+fi
+sleep $time
+/data/archbkp/hibernate.sh
+exit 0
+
+
+

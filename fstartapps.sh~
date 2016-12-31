@@ -1,0 +1,86 @@
+
+#!/bin/bash
+
+
+nohup firefox -P app -new-window web.whatsapp.com &
+echo "launching whatsapp"
+sleep 3.1
+x=$(xdotool getactivewindow)
+echo $x > /data/archbkp/appsID/whatsapp
+
+/data/archbkp/min.sh
+sleep 0.1
+
+nohup firefox -P app -new-window "http://inbox.google.com/" &
+echo "launching inbox"
+sleep 4.1
+x=$(xdotool getactivewindow)
+echo $x > /data/archbkp/appsID/inbox
+
+/data/archbkp/min.sh
+sleep 0.1
+
+nohup firefox -P app -new-window "calendar.google.com/calendar/gp#~calendar:view=m" &
+echo "launching calendar"
+sleep 3.1
+x=$(xdotool getactivewindow)
+echo $x > /data/archbkp/appsID/calendar
+
+/data/archbkp/min.sh
+
+terwin=$(xdotool getactivewindow)
+sleep 0.1
+
+
+nohup firefox -P app -new-window "translate.google.com/m/translate" &
+echo "launching translate"
+
+x=$(xdotool getactivewindow)
+while [ $x -eq $terwin ] 
+do
+sleep 0.5
+x=$(xdotool getactivewindow)
+done
+echo $x > /data/archbkp/appsID/translate
+
+/data/archbkp/min.sh
+sleep 0.1
+
+nohup firefox -P app -new-window "www.messenger.com" &
+echo "launching messenger"
+x=$(xdotool getactivewindow)
+while [ $x -eq $terwin ] 
+do
+sleep 0.5
+x=$(xdotool getactivewindow)
+done
+echo $x > /data/archbkp/appsID/messenger
+
+/data/archbkp/min.sh
+sleep 0.1
+
+nohup firefox -P appVR -new-window "www.messenger.com" &
+echo "launching messenger VR"
+x=$(xdotool getactivewindow)
+while [ $x -eq $terwin ] 
+do
+sleep 0.5
+x=$(xdotool getactivewindow)
+done
+echo $x > /data/archbkp/appsID/messengerVR
+
+/data/archbkp/min.sh
+sleep 0.1
+
+nohup firefox -P app -new-window "www.pushbullet.com/" &
+echo "launching pushbullet"
+x=$(xdotool getactivewindow)
+while [ $x -eq $terwin ] 
+do
+sleep 0.5
+x=$(xdotool getactivewindow)
+done
+echo $x > /data/archbkp/appsID/pushbullet
+
+/data/archbkp/min.sh
+sleep 0.1
