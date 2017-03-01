@@ -1,6 +1,6 @@
 #!/bin/bash
 terwin=$(xdotool getactivewindow)
-vboxmanage startvm winxp
+vboxmanage startvm xp
 x=$(xdotool getactivewindow)
 while [ $x -eq $terwin ] 
 do

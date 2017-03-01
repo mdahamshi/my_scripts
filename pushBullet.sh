@@ -1,0 +1,9 @@
+#!/bin/bash
+t=$1
+b=$2
+if [ -z "$2" ]
+then
+	b=$1
+fi
+curl -u """o.ejxWal6kxkNJ2IjueAIbHYbEcusdkYZP"":" -d type="note" -d body="$b" -d title="$t" -d email="mmd.robot@gmail.com" 'https://api.pushbullet.com/v2/pushes' 
+exit 0

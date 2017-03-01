@@ -5,15 +5,17 @@ sleep 0.5
 i3lock -i /data/archbkp/pass.png &
 sleep 1
 pid="$(ps -e |grep i3lock | awk '{print $1}')" 
-i=$(cat /data/tmp/0000/i)
+i=$(cat /data/Dropbox/lk/i)
 let i=i+1
 while kill -0 $pid ; do
-fswebcam /data/tmp/0000/a$i.jpeg
+fswebcam /data/Dropbox/lk/a$i.jpeg
 let i=i+1
 sleep 1
 done
-echo $i > /data/tmp/i
-
-
+echo $i > /data/Dropbox/lk/i
+dropbox stop
+sleep 10
+dropbox start
+exit 0
 
 

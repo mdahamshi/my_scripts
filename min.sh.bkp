@@ -1,0 +1,41 @@
+#!/bin/bash
+x=$(xdotool getactivewindow)
+wmctrl -r :ACTIVE: -t 10
+xdotool windowminimize $x
+cd /data/archbkp/appsID
+doesNotHaveShortcut=true
+for appWithShortcut in *
+do
+	if [ $appWithShortcut != "last" ]
+	then
+		id=$(cat $appWithShortcut)
+		if [ $id -eq $x ]
+		then
+			doesNotHaveShortcut=false
+		fi
+	fi
+done
+
+id=$(cat null)
+if [ $id -eq $x ]
+then
+	doesNotHaveShortcut=true
+fi
+
+if [ "$doesNotHaveShortcut" = true ]
+then 
+	echo $x > /data/archbkp/appsID/last
+fi
+
+xp=$(cat /data/archbkp/appsID/xp)
+ten=$(cat /data/archbkp/appsID/win10)
+
+if [ $x -eq $xp ] 
+then
+	vboxmanage controlvm xp pause
+fi
+
+if [ $x -eq $ten ]
+then
+vboxmanage controlvm win10 pause
+fi

@@ -1,31 +1,37 @@
 #!/bin/bash
-x=$(xdotool getactivewindow)
-wmctrl -r :ACTIVE: -t 5
-xdotool windowminimize $x
+currentWindowID=$(xdotool getactivewindow)
+wmctrl -r :ACTIVE: -t 10
+xdotool windowminimize $currentWindowID
 cd /data/archbkp/appsID
-flag=1
-for i in *
-do
-if [ $i != "last" ]  
+
+suspected=$(cat * | grep $currentWindowID) # grep id that equal current window id
+
+if [ -z $suspected ]    # This mean there are no windows with current window id
 then
-id=$(cat $i)
-if [ $id -eq $x ]
+	echo $currentWindowID > /data/archbkp/appsID/last
+	exit 0
+fi
+
+nullID=$(cat null)
+lastID=$(cat last)
+
+if [ $currentWindowID -eq $lastID || $currentWindowID -eq $nullID ]
 then
-flag=0
+	echo $currentWindowID > /data/archbkp/appsID/last
+	exit 0
 fi
-fi
-done
-if [ $flag -eq 1 ]
-then 
-echo $x > /data/archbkp/appsID/last
-fi
+
 xp=$(cat /data/archbkp/appsID/xp)
 ten=$(cat /data/archbkp/appsID/win10)
-if [ $x -eq $xp ] 
+
+if [ $currentWindowID -eq $xp ] 
 then
-vboxmanage controlvm winxp pause
+	vboxmanage controlvm xp pause
 fi
-if [ $x -eq $ten ]
+
+if [ $currentWindowID -eq $ten ]
 then
-vboxmanage controlvm win10 pause
+	vboxmanage controlvm win10 pause
 fi
+
+exit 0

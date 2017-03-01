@@ -1,5 +1,5 @@
 #!/bin/bash
-wmctrl  -R winxp
-vboxmanage controlvm winxp resume
+wmctrl  -R xp
+vboxmanage controlvm xp resume
 sleep 0.1
 xdotool getactivewindow  > /data/archbkp/appsID/xp

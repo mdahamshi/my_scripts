@@ -12,7 +12,7 @@ cp /data/archbkp/advancedsettings.xml ~/.kodi/userdata/advancedsettings.xml
 
 sudo apt-get install -y software-properties-common 
 sudo add-apt-repository -y ppa:team-xbmc/ppa 
-
+sudo add-apt-repository -y ppa:starws-box/deadbeef-player
 cp -a /data/archbkp/applications/. /usr/share/applications 
 
 apt-get -y update  
@@ -26,6 +26,24 @@ apt-get install -y ubuntu-restricted-extras
 apt-get install -y dropbox python-gpgme
 
 apt-get install -y skype 
+
+apt-get install -y feh 
+
+apt-get install -y xbacklight
+
+apt-get install -y fswebcam
+
+apt-get install -y deadbeef
+
+apt-get install -y bmon
+
+apt-get install -y macchanger
+
+apt-get install -y scrot
+
+apt-get install -y xdotool
+
+apt-get install -y virtualbox virtualbox-qt virtualbox-ext-pack
 
 apt-get install -y unace p7zip-rar sharutils rar arj lunzip lzip 
 

@@ -1,0 +1,6 @@
+#!/bin/bash
+cd /data/archbkp/
+path=$(cat mypath)
+path="${path}appsID/$1"
+echo 0 > $path 
+

@@ -1,8 +1,3 @@
-
-
-
-
-
 #!/bin/bash
 xdotool key super+2
 sleep 0.3
