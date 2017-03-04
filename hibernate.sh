@@ -8,10 +8,11 @@ clear
 pkill --oldest --signal TERM -f chrome
 sleep 2
 kl chrome
-cd /data/archbkp/appsID
-for file in {chrome,chromeVR,last,messenger,messengerVR,inbox,inboxVR,docs,keep,moodle,whatsapp,translate,pocket,pushbullet,calendar,books,xp,win10}
+cd /data/archbkp/appsID/chromeIDs
+for file in *
 do
-echo 0 > ./$file
+	echo 0 > ../$file
+	echo 0 > ./$file
 done
 sudo pm-hibernate
 sudo /data/archbkp/genMac.sh

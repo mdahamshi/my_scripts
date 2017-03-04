@@ -16,3 +16,5 @@ x=$(xdotool getactivewindow)
 done
 xprop -id `xdotool getactivewindow` | grep '_NET_WM_PID' | grep -oE '[[:digit:]]*$' > /data/archbkp/pids/chrome
 echo $x > /data/archbkp/appsID/chrome
+echo $x > /data/archbkp/appsID/chromeIDs/chrome
+
