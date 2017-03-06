@@ -3,6 +3,6 @@ mypath=$(cat mypath)
 cd ${mypath}/appsID
 for file in *
 do
-echo 0 > $file
-echo 0 > ./chromeIDs/$file
+	echo 0 > $file
+	echo 0 > ./chromeIDs/$file
 done
