@@ -1,0 +1,11 @@
+#!/bin/bash
+
+pgrep usb.sh
+if [ $? -eq 0 ]
+then
+	pkill usb.sh
+	notify-send "Usb killed" "Usb script killed successfully."
+else
+	/data/archbkp/usb.sh &
+	notify-send "Usb script launched" "Usb script launched successfully."
+fi

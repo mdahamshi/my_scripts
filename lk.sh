@@ -13,6 +13,7 @@ let i=i+1
 sleep 1
 done
 echo $i > /data/tmp/lk/i
+pkill usb.sh
 exit 0
 
 

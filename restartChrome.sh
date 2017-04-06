@@ -1,5 +1,5 @@
 #!/bin/bash
-pkill --signal TERM -o chrome
+pkill --oldest chrome
 cd /data/archbkp/appsID/chromeIDs
 
 for file in *
@@ -11,14 +11,6 @@ done
 cd ../..
 cd lan
 
-./chrome
-
-../chWithBar.sh
-
-sleep 1
-
-../min.sh
-
 ./generalLan whatsapp "http://web.whatsapp.com "
 
 ../min.sh
@@ -26,5 +18,7 @@ sleep 1
 ./generalLan messenger "http://www.messenger.com"
 
 ../min.sh
+echo 0 > ../appsID/chrome
+echo 0 > ../appsID/chromeIDs/chrome
 
 exit 0

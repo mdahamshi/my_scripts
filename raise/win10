@@ -2,4 +2,10 @@
 wmctrl  -R win10
 vboxmanage controlvm win10 resume
 sleep 0.1
-xdotool getactivewindow  > /data/archbkp/appsID/win10
+win10=$(xdotool getactivewindow)
+echo $win10  > /data/archbkp/appsID/win10
+if [ $win10 -eq "$(cat /data/archbkp/appsID/last)" ]
+then
+	echo 0 > /data/archbkp/appsID/last
+fi
+

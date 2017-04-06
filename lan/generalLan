@@ -6,7 +6,7 @@ exit 0
 fi
 
 terwin=$(xdotool getactivewindow)
-google-chrome --user-data-dir=/data/google-chrome/ --profile-directory="Default" --app=$2  --ssl-version-min=tls1  & > /dev/null 2>&1
+google-chrome --user-data-dir=/data/google-chrome/ --profile-directory="Apps" --app=$2  --ssl-version-min=tls1  & > /dev/null 2>&1
 x=$(xdotool getactivewindow)
 while [ $x -eq $terwin ] 
 do

@@ -2,4 +2,10 @@
 wmctrl  -R xp
 vboxmanage controlvm xp resume
 sleep 0.1
-xdotool getactivewindow  > /data/archbkp/appsID/xp
+xpId=$(xdotool getactivewindow)
+echo $xpId  > /data/archbkp/appsID/xp
+if [ $xpId -eq "$(cat /data/archbkp/appsID/last)" ]
+then
+	echo 0 > /data/archbkp/appsID/last
+fi
+
