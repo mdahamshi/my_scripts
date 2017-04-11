@@ -1,5 +1,5 @@
 #!/bin/bash
-/data/archbkp/raise/generalRaise $1
+/data/archbkp/raise/chrmRaise $1
 if [ $? -eq 0 ]
 then
 exit 0
