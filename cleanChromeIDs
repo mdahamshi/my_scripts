@@ -1,0 +1,10 @@
+#!/bin/bash
+cd /data/archbkp/appsID/chromeIDs
+
+for file in *
+do
+	echo 0 > ./$file
+	echo 0 > ../$file
+done
+
+

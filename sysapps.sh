@@ -15,7 +15,7 @@ xprop -id `xdotool getactivewindow` | grep '_NET_WM_PID' | grep -oE '[[:digit:]]
 wmctrl -ir $x -e 0,0,0,680,380
 sleep 0.1
 
-xfce4-terminal -e 'watch  "sensors ;free -h"'
+xfce4-terminal -e 'watch  "sensors ;free -h; echo; acpi"'
 echo "launching temp & ram"
 x=$(xdotool getactivewindow)
 while [ $x -eq $terwin ] 

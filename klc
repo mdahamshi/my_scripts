@@ -1,0 +1,6 @@
+#!/bin/bash
+pkill chrome
+sleep 1
+pkill chrome
+pgrep chrome
+exit

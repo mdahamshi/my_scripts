@@ -1,12 +1,24 @@
 #!/bin/bash
+Copyright (C) <2017>  <Mohammad Dahamshi>
+
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#!/bin/bash
 while true;
 do
-( speaker-test -t sine -f 1000 )& pid=$! ; sleep 0.1s ;kill -9 $pid
-( speaker-test -t sine -f 1000 )& pid=$! ; sleep 0.1s ;kill -9 $pid
 
 notify-send -t 20000 "WATCH YOUR EYES" "look 20m far, for 20s, every 20m"
 sleep 20
-( speaker-test -t sine -f 1000 )& pid=$! ; sleep 0.1s ;kill -9 $pid
-( speaker-test -t sine -f 1000 )& pid=$! ; sleep 0.1s ;kill -9 $pid
 sleep 1200
 done

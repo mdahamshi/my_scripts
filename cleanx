@@ -1,6 +1,7 @@
 #!/bin/bash
 cd /data/archbkp/
 path=$(cat mypath)
-path="${path}appsID/$1"
-echo 0 > $path 
+path="${path}appsID/"
+echo 0 > ${path}/$1
+echo 0 > ${path}/chromeIDs/$1 
 

@@ -4,5 +4,9 @@ cd ${mypath}/appsID
 for file in *
 do
 	echo 0 > $file
-	echo 0 > ./chromeIDs/$file
 done
+cd ..
+
+./cleanChromeIDs
+
+exit 0

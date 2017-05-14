@@ -1,0 +1,7 @@
+<?xml version="1.0"?>  
+<mime-info xmlns='http://www.freedesktop.org/standards/shared-mime-info'>  
+    <mime-type type="application/extension-pdfbook">  
+        <comment>.pdfbook file</comment>  
+        <glob pattern="*.pdfbook"/>  
+    </mime-type>  
+</mime-info>  

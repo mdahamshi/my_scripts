@@ -3,17 +3,20 @@ dropbox stop
 xdotool key 37+64+51 
 vboxmanage controlvm win10 savestate
 vboxmanage controlvm xp savestate
+cd /data/archbkp
 ./saveVboxMachines.sh
-clear
-pkill --oldest --signal TERM -f chrome
-sleep 2
-kl chrome
+./klc
 cd /data/archbkp/appsID/chromeIDs
-for file in *
-do
-	echo 0 > ../$file
-	echo 0 > ./$file
-done
+
+fileExist=$(ls)
+if [ -z $fileExist ]
+then
+	for file in *
+	do
+		echo 0 > ../$file
+		echo 0 > ./$file
+	done
+fi
 sudo pm-hibernate
 sudo /data/archbkp/genMac.sh
 sudo swapoff -a
