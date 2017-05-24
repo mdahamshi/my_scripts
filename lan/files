@@ -6,7 +6,7 @@ exit 0
 fi
 
 terwin=$(xdotool getactivewindow)
-Thunar & > /dev/null 2>&1
+pcmanfm & > /dev/null 2>&1
 echo "launching calculator"
 x=$(xdotool getactivewindow)
 while [ $x -eq $terwin ] 
