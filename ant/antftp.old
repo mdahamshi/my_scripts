@@ -1,0 +1,40 @@
+#!/bin/bash
+baseDir=$(dirname $(readlink -f "$0"))
+cd $baseDir
+if [ ! -d "./vars" ]
+then
+	mkdir vars
+fi
+if [ ! -f "./vars/camip" ]
+then
+	echo please enter camera ip:
+	read ip
+	if [[ $ip =~ ^[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}$ ]]
+	then
+		echo $ip > ./vars/camip
+	else
+		echo ip not correct !
+		exit 1
+	fi
+fi
+echo enter from to dd mm :
+read from to dd mm
+if [ -z "$mm" ]
+then
+	echo please enter 4 parameters !
+	exit 1
+fi
+echo $from > ./vars/from
+echo $to > ./vars/to
+echo $dd > ./vars/dd
+echo $mm > ./vars/mm
+echo making dirs ...
+./dir.sh
+sleep 1
+echo making for ...
+./makeFor.sh > in
+sleep 1
+echo beginning ftp ...
+ftp < in
+echo done !
+pbme "ant camera finished !" 

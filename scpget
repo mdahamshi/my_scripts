@@ -1,0 +1,2 @@
+#!/bin/bash
+scp  mohammad@mdahamshi.casacam.net:$1 $2

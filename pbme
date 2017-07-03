@@ -1,14 +1,15 @@
 #!/bin/bash
-t=$1
-b=$2
+t="$1"
+b="$2"
 if [ -z "$2" ]
 then
-	b=$1
+	b="$1"
 fi
 if [ -z "$1" ]
 then
 	t="Operation done !"
 	b="Hey Boss, operation completed successfully :)"
 fi
-curl -u """$(cat /data/aes/key)"":" -d type="note" -d body="$b" -d title="$t"  'https://api.pushbullet.com/v2/pushes' 
+curl -u """$(cat /data/aes/key)"":" -d type="note"  -d title="$t"    'https://api.pushbullet.com/v2/pushes' &> /dev/null
+echo \"$1\" pushed successfully
 exit 0

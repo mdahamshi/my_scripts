@@ -1,0 +1,2 @@
+echo port: 8083
+ssh -L 8083:10.100.102.1:80 mdahamshi.casacam.net 

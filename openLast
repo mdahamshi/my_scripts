@@ -1,0 +1,5 @@
+#!/bin/bash
+cd /data/tmp
+xdg-open $(ls -alt | awk '/^-/{print $9;exit}') &
+exit 0
+

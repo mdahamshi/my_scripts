@@ -1,0 +1,16 @@
+sum=0
+hours=0
+for dir in $(ls | grep '[0-9]\{4\}')
+do
+	let sum=sum+$(ls ./$dir | wc -l)
+	for day in $(ls ./$dir)
+	do
+		let hours=hours+$(ls ./$dir/$day | wc -l)
+	done
+done
+echo
+echo here is antCam info : \(not 100% accurte\)
+echo num of days:  $sum
+echo num of hours: $hours
+echo size:         $(du -hs)
+echo

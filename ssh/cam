@@ -1,0 +1,2 @@
+echo port: 5050
+ssh -L 5050:10.100.102.2:554 mdahamshi.casacam.net

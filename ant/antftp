@@ -1,0 +1,121 @@
+#!/bin/bash
+# xiaomi ant camera ftp api  (ver 0.1)
+# Copyright (C) 2017 MMD-SYS 
+
+# Author: Mohammad Dahamsih
+# Email: Mohammad.Dahamshi@gmail.com
+# Github: github.com/mdahamshi
+
+# License: GNU LGPL v3.0
+
+# TERMS OF USE:
+# 	Permission is granted to use this code, with or
+# 	without modification, in any website or application
+# 	provided that credit is given to the original work
+# 	with a link back to PrayTimes.org.
+
+# This program is distributed in the hope that it will
+# be useful, but WITHOUT ANY WARRANTY.
+
+# PLEASE DO NOT REMOVE THIS COPYRIGHT BLOCK.
+
+#  A simple program to get range 
+# of hours from spesific day in
+# month, from the xiaomi ant camera
+
+baseDir=$(dirname $(readlink -f "$0"))
+echo working dir: $baseDir
+cd $baseDir
+
+if [ ! -f "./camip" ]
+then
+	echo please enter camera ip:
+	read ip
+	if [[ $ip =~ ^[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}$ ]]
+	then
+		echo $ip > ./camip
+	else
+		echo ip not correct !
+		exit 1
+	fi
+fi
+
+echo please enter: from to day month :
+
+read from to dd mm
+if [ -z "$mm" ]
+then
+	echo please enter 4 parameters !
+	exit 1
+fi
+
+YY=$(date +%Y)
+yy=$(date +%y)
+
+if [ $dd -le 9 ] 
+then
+	dd=0$dd
+fi
+if [ $mm -le 9 ] 
+then
+	mm=0$mm
+fi
+date="$dd$mm$yy"
+ip=$(<./camip)
+
+createDirs()
+{
+	oldDir=$(pwd)	
+	if [ ! -d "$YY" ]
+	then
+		mkdir $YY
+	fi
+	cd $YY
+	mkdir $date
+	cd $date
+
+	for ((i=$from ;i <= $to ;i++))
+	do
+		mkdir $i
+	done
+	cd $oldDir
+}
+
+makeFor()
+{
+>ftpInput
+echo "open $ip" >> ftpInput
+echo user root >> ftpInput
+echo "prompt" >> ftpInput
+for ((i=$from ; i <= $to ;i++))
+do
+	if [ $i -le 9 ] 
+	then
+		a="cd /home/hd1/record/${YY}Y${mm}M${dd}D0"
+	else
+		a="cd /home/hd1/record/${YY}Y${mm}M${dd}D"
+	fi
+	b="H"
+	c=$a$i$b
+	echo $c >> ftpInput
+	echo "lcd $(pwd)/${YY}/${date}/$i" >> ftpInput
+	echo "mget * ./" >> ftpInput
+done
+
+echo close >> ftpInput
+echo bye >> ftpInput
+}
+
+
+echo making dirs ...
+createDirs
+sleep 1
+echo making for ...
+makeFor
+sleep 1
+echo beginning ftp ...
+ftp < ftpInput
+rm ftpInput
+echo done !
+pbme "ant camera finished !" 
+
