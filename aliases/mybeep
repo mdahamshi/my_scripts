@@ -1,0 +1,8 @@
+#!/bin/bash
+if [ -z "$1" ]
+then
+	duration=0.1
+else
+	duration=$1
+fi
+( speaker-test -t sine -f 1000  &> /dev/null)& pid=$! ; sleep ${duration}s &> /dev/null; kill -9 $pid &> /dev/null

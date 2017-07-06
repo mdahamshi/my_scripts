@@ -1,0 +1,7 @@
+#!/bin/bash
+
+axel $1
+notify-send "axel operation done !"""
+beep 1
+pbme "axel operation done !"
+exit 0

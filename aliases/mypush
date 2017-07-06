@@ -1,0 +1,7 @@
+#!/bin/bash
+
+adb push -p $1 /sdcard/
+notify-send "adb push operation done !"""
+beep 1
+pbme "adb push operation done !"
+exit 0
