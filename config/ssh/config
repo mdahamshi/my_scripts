@@ -1,0 +1,6 @@
+Host mmd  
+	HostName mdahamshi.casacam.net 
+	User mohammad
+Host mmdl
+	HostName 10.100.102.4
+	User mohammad

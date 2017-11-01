@@ -1,0 +1,2 @@
+transcend -fstype=nfs4,rw,soft,intr 10.100.102.4:/transcend
+tmp  -fstype=nfs4,rw,soft,intr 10.100.102.4:/tmp

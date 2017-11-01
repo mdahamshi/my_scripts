@@ -1,2 +1,8 @@
-echo port: 8080
-ssh -L 8080:127.0.0.1:80 mdahamshi.casacam.net
+
+port=$1
+if [ -z $1 ]
+then
+	port=8080
+fi
+echo port: $port
+ssh -L ${port}:127.0.0.1:80 mdahamshi.casacam.net

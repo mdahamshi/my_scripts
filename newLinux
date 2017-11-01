@@ -1,0 +1,33 @@
+cp xfce4-keyboard-shortcuts.xml ~/.config/xfce4/xfconf/xfce-perchannel-xml/
+
+cp /data/archbkp/user-dirs.dirs ~/.config/user-dirs.dirs 
+sudo cp /data/archbkp/user-dirs.defaults /etc/xdg/user-dirs.defaults 
+
+sudo ln -s /data/robo-port/pushbullet/getLastPush /usr/bin
+
+sudo cp /data/archbkp/config/local.conf /etc/fonts/
+cp /data/archbkp/config/.Xresources ~/
+xrdb -merge ~/.Xresources
+ sudo ln -s /data/archbkp/sysapps.sh /usr/bin/mmsysapps
+sudo ln -s /data/archbkp/sysapps.sh /usr/bin/mmsys
+
+sudo apt-get install xdotool wmctrl bmon synapse nfs-common
+
+sudo ln -s /data/archbkp/pbme /usr/bin/pbme
+
+sudo ln -s /data/archbkp/pushBullet.sh /usr/bin/pb
+sudo ln -s /data/archbkp/link/cleanx /usr/bin/
+sudo ln -s /data/archbkp/aliases/mybeep /usr/bin/beep
+sudo ln -s /data/archbkp/aliases/* /usr/bin/
+git config --global user.email "mmd.0@hotmail.com"
+git config --global user.name "mdahamshi"
+sudo apt-get install mupdf fsarchiver i3lock xbacklight scrot
+mkdir ~/.ssh
+cp /data/archbkp/config/ssh/* ~/.ssh
+
+
+df fsarchiver i3lock xbacklight scrot
+mkdir ~/.ssh
+cp /data/archbkp/config/ssh/* ~/.ssh
+
+

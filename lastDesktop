@@ -1,0 +1,8 @@
+#!/bin/bash
+
+dir=$(dirname $(readlink  -f "$0"))
+cd $dir
+
+last=$(<./desktop/last)
+wmctrl -s $last
+exit 0

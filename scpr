@@ -1,2 +1,6 @@
 #!/bin/bash
 scp $1 mohammad@mdahamshi.casacam.net:$2
+: scpr source  target"
+	exit 0
+fi
+scp $1 mohammad@mdahamshi.casacam.net:$2

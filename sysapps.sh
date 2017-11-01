@@ -12,7 +12,7 @@ do
 done
 echo $x > /data/archbkp/appsID/top
 xprop -id `xdotool getactivewindow` | grep '_NET_WM_PID' | grep -oE '[[:digit:]]*$' > /data/archbkp/sysappspid
-wmctrl -ir $x -e 0,0,0,680,380
+wmctrl -ir $x -e 0,0,0,700,380
 sleep 0.1
 
 xfce4-terminal -e 'watch  "sensors ;free -h; echo; acpi"'

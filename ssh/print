@@ -1,0 +1,2 @@
+echo 8085
+ssh -L 8085:localhost:631 mdahamshi.casacam.net

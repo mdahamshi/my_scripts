@@ -1,0 +1,3 @@
+rsync --append --recursive -v --exclude="VirtualBox VMs" /data/ /mnt/transcend/fujitsu/;
+pbme "rsync done :)"
+

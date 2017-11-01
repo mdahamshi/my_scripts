@@ -1,2 +1,6 @@
 #!/bin/bash
 scp  mohammad@mdahamshi.casacam.net:$1 $2
+e: scpget from to"
+	exit 0
+fi
+scp  mohammad@mdahamshi.casacam.net:$1 $2

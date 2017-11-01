@@ -1,0 +1,7 @@
+#!/bin/bash
+dir=$(dirname $(readlink  -f "$0"))
+cd $dir
+
+wmctrl -d  | awk '/*/{print $1}' > ./desktop/last
+wmctrl -s 0
+exit 0

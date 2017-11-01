@@ -5,5 +5,7 @@ synclient RTCornerButton=0
 ./cleanAppsIDs
 unclutter -idle 1 &
 sudo /data/archbkp/enableSysReq 
-xfce4-terminal
+#xinput set-prop  13 275 1
+# xinput set-prop  13 290 0 1 0
+
 exit 0

@@ -1,3 +1,1 @@
-mohammad ALL=(ALL) NOPASSWD:/data/archbkp/genMac.sh,/sbin/swapon,/sbin/swapoff , /usr/sbin/pm-suspend-hybrid,/usr/sbin/pm-hibernate , 
- /usr/sbin/s2both , /usr/sbin/pm-suspend , /sbin/poweroff, /sbin/reboot, /sbin/shutdown , /usr/bin/apt-get , /usr/sbin/iotop
-
+mohammad ALL=(ALL) NOPASSWD:/data/archbkp/genMac.sh,/sbin/swapon,/sbin/swapoff , /usr/sbin/pm-suspend-hybrid,/usr/sbin/pm-hibernate , /usr/sbin/s2both , /usr/sbin/pm-suspend , /sbin/poweroff, /sbin/reboot, /sbin/shutdown , /usr/bin/apt-get , /usr/sbin/iotop 

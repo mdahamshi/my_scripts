@@ -1,12 +1,12 @@
 #!/bin/bash
-/data/archbkp/raise/generalRaise server
+/data/archbkp/raise/generalRaise serverLocal
 if [ $? -eq 0 ]
 then
 	exit 0
 fi
 
 terwin=$(xdotool getactivewindow)
-xfce4-terminal -e "ssh mdahamshi.casacam.net" --maximize  & > /dev/null 2>&1
+xfce4-terminal   --maximize -e "$1" & > /dev/null 2>&1
 echo "launching server window"
 x=$(xdotool getactivewindow)
 while [ $x -eq $terwin ] 
@@ -14,6 +14,6 @@ do
 sleep 0.5
 x=$(xdotool getactivewindow)
 done
-echo $x > /data/archbkp/appsID/server
+echo $x > /data/archbkp/appsID/serverLocal
 
-xprop -id `xdotool getactivewindow` | grep '_NET_WM_PID' | grep -oE '[[:digit:]]*$' > /data/archbkp/pids/server
+xprop -id `xdotool getactivewindow` | grep '_NET_WM_PID' | grep -oE '[[:digit:]]*$' > /data/archbkp/pids/serverLocal
